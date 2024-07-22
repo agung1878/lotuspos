@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+       xmlns:th="http://www.thymeleaf.org">
+<body>
+<div th:fragment="script">
+    <script th:src="@{/assets/plugins/jquery/jquery-3.4.1.min.js}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script th:src="@{/assets/plugins/bootstrap/js/bootstrap.min.js}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js" integrity="sha512-24XP4a9KVoIinPFUbcnjIjAjtS59PUoxQj3GNVpWc86bCqPuy3YxAcxJrxFCxXe4GHtAumCbO2Ze2bddtuxaRw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script th:src="@{/assets/plugins/perfectscroll/perfect-scrollbar.min.js}"></script>
+    <script th:src="@{assets/plugins/apexcharts/apexcharts.min.js}"></script>
+    <script th:src="@{/assets/js/main.min.js}"></script>
+    <script th:src="@{/assets/js/pages/dashboard.js}"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js" integrity="sha512-LsnSViqQyaXpD4mBBdRYeP6sRwJiJveh2ZIbW41EBrNmKxgr/LFZIiWT6yr+nycvhvauz8c2nYMhrP80YhG7Cw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.23/dist/sweetalert2.all.min.js"></script>
+    <script>
+        $('.date').datepicker({
+            multidate: true,
+            format: 'dd-mm-yyyy'
+        });
+    </script>
+    <script>
+        $('.time').datetimepicker({
+            format: 'hh:mm:ss'
+        });
+    </script>
+</div>
+</body>
+</html>

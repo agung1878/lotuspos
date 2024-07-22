@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<body>
+<div th:fragment="sidebar">
+    <div class="page-sidebar">
+        <ul class="list-unstyled accordion-menu">
+            <li class="sidebar-title">
+                Main
+            </li>
+            <li th:classappend="${activeTab  == 'DASHBOARD' ? 'active-page' : ''}">
+                <a th:href="@{/dashboard}"><i data-feather="home"></i>Dashboard</a>
+            </li>
+            <li class="sidebar-title">
+                Apps
+            </li>
+            <li th:classappend="${activeTab  == 'OUTLET' ? 'active-page' : ''}">
+                <a th:href="@{/outlet/list}"><i data-feather="shopping-bag"></i>Outlet</a>
+            </li>
+            <li th:classappend="${activeTab  == 'ITEM_LIBRARY' ? 'active-page' : ''}">
+                <a th:href="@{/library/item/list}"><i data-feather="package"></i>Item Library</a>
+            </li>
+            <li sec:authorize="hasAuthority('MANAGEMENT_COURSE_VIEW')" th:classappend="${activeTab  == 'COURSE' ? 'active-page' : ''}">
+                <a th:href="@{/course/list}"><i data-feather="inbox"></i>Course</a>
+            </li>
+            <li>
+                <a th:href="@{/course/my_course}" th:classappend="${activeTab  == 'MYCOURSE' ? 'active-page' : ''}"><i data-feather="inbox"></i>My Courses</a>
+            </li>
+            <li>
+                <a th:href="@{/schedule/my_schedules}" th:classappend="${activeTab  == 'MYSCHEDULES' ? 'active-page' : ''}"><i data-feather="calendar"></i>My Schedule</a>
+            </li>
+            <li>
+                <a th:href="@{/e_certificate}"><i data-feather="message-circle"></i>E - Certificate</a>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

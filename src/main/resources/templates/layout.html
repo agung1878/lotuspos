@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="eng">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <div th:insert="~{partials/head :: head}" th:remove="tag">Head</div>
+    <div layout:fragment="customCss" th:remove="tag"></div>
+</head>
+<body>
+<div class='loader'>
+    <div class='spinner-grow text-primary' role='status'>
+        <span class='sr-only'>Loading...</span>
+    </div>
+</div>
+<div class="page-container">
+    <!-- Navbar -->
+    <div th:insert="~{partials/header :: header}" th:remove="tag">Header</div>
+    <!-- /.navbar -->
+    <!-- Sidebar -->
+    <div th:insert="~{partials/sidebar :: sidebar}" th:remove="tag">Sidebar</div>
+
+    <!-- /.sidebar -->
+
+    <div class="page-content">
+        <div layout:fragment="content" th:remove="tag"></div>
+    </div>
+</div>
+
+<div th:insert="~{partials/script :: script}" th:remove="tag">Script</div>
+<div layout:fragment="customScript" th:remove="tag"></div>
+</body>
+</html>
+
+
+

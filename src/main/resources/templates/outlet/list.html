@@ -1,0 +1,70 @@
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layout}" th:with="activeTitle='Outlet',activeTab='OUTLET'">
+<head>
+    <div layout:fragment="customCss">
+        <style>
+            .card {
+                border: none;
+                padding: 10px 50px;
+            }
+
+            .card::after {
+                position: absolute;
+                z-index: -1;
+                opacity: 0;
+                -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+                transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            }
+
+            .card:hover {
+
+                transform: scale(1.02, 1.02);
+                -webkit-transform: scale(1.02, 1.02);
+                backface-visibility: hidden;
+                will-change: transform;
+                box-shadow: 0 1rem 3rem rgba(0, 0, 0, .75) !important;
+            }
+
+            .card:hover::after {
+                opacity: 1;
+            }
+
+            .card:hover .btn-outline-primary {
+                color: white;
+                background: #007bff;
+            }
+
+        </style>
+    </div>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="main-wrapper">
+        <a th:href="@{/outlet/form}">
+            <button type="button" class="btn btn-success m-b-xs">
+                <span class="btn-label"><i class="fa fa-plus"></i></span>
+                Add Outlet
+            </button>
+        </a>
+        <div class="row">
+            <div class="col-md-6 col-xl-3" th:each="data : ${outlets}">
+                <div class="card stat-widget">
+                    <div class="card-body">
+                        <h5 class="card-title" th:text="${data.name}">Outlet 1</h5>
+                        <h2>132</h2>
+                        <p th:text="${data.description}">Item Library</p>
+                        <div class="progress">
+                            <div class="progress-bar bg-info progress-bar-striped" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div layout:fragment="customScript"></div>
+
+</body>
+</html>
